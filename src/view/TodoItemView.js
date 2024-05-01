@@ -36,6 +36,9 @@ export class TodoItemView {
       saveButton.textContent = "(保存)";
       editButtonElement.parentNode.replaceChild(saveButton, editButtonElement);
 
+      inputArea.focus();
+      inputArea.setSelectionRange(inputArea.value.length, inputArea.value.length);
+
       saveButton.addEventListener("click", () => {
         const newTitle = inputArea.value;
         onEditTodo({
